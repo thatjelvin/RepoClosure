@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repoclosure"
+version = "0.1.0"
+description = "Graph-guided, explainable, model-agnostic repository-level code retrieval"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "RepoClosure contributors" }]
+keywords = ["code-retrieval", "repository-level", "code-graph", "software-engineering", "rag"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+  "numpy>=1.24",
+  "networkx>=3.0",
+  "rank-bm25>=0.2.2",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=2.5"]
+huggingface = ["transformers>=4.40", "torch>=2.0"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "scipy>=1.10", "sentence-transformers>=2.5"]
+
+[project.scripts]
+repoclosure = "repoclosure.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

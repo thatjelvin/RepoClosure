@@ -1,0 +1,7 @@
+{
+  "seed": 42,
+  "retrieval": {
+    "embed_model": "hashing",
+    "top_k": 10
+  }
+}

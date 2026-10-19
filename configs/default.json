@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "parse": {
+    "source_suffixes": [".py"],
+    "max_file_bytes": 2000000
+  },
+  "graph": {
+    "enabled_edge_types": ["contains", "imports", "calls", "references"],
+    "enable_heuristic_calls": true,
+    "heuristic_call_confidence": 0.30
+  },
+  "retrieval": {
+    "top_k": 10,
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "rrf_k": 60,
+    "rrf_depth": 100,
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_batch_size": 32,
+    "embed_max_chars": 2000,
+    "expansion_enabled": true,
+    "expansion_depth": 1,
+    "expansion_budget": 25,
+    "expansion_edge_types": ["calls", "imports", "contains", "references"],
+    "expansion_seed_k": 10,
+    "expansion_weight": 0.30,
+    "expansion_min_confidence": 0.30,
+    "granularity": "file"
+  }
+}
