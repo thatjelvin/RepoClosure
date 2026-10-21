@@ -1,0 +1,774 @@
+{
+  "run_id": "smoke",
+  "config": {
+    "seed": 42,
+    "parse": {
+      "source_suffixes": [
+        ".py"
+      ],
+      "ignored_dirs": [
+        ".git",
+        ".hg",
+        ".svn",
+        "__pycache__",
+        ".venv",
+        "venv",
+        "env",
+        ".env",
+        "build",
+        "dist",
+        "node_modules",
+        ".tox",
+        ".mypy_cache",
+        ".pytest_cache",
+        ".ruff_cache",
+        "site-packages",
+        ".eggs",
+        "htmlcov",
+        ".idea",
+        ".vscode",
+        "docs/_build",
+        ".nox",
+        "target",
+        ".cache"
+      ],
+      "ignored_path_parts": [
+        "/migrations/",
+        "generated",
+        "_pb2.py",
+        ".min.js",
+        "vendor/",
+        "third_party/"
+      ],
+      "max_file_bytes": 2000000,
+      "include_private": true,
+      "parse_failures_are_recorded": true
+    },
+    "graph": {
+      "enabled_edge_types": [
+        "contains",
+        "imports",
+        "calls",
+        "references"
+      ],
+      "min_confidence": 0.0,
+      "enable_heuristic_calls": true,
+      "heuristic_call_confidence": 0.3,
+      "include_tests": true
+    },
+    "retrieval": {
+      "top_k": 10,
+      "bm25_k1": 1.5,
+      "bm25_b": 0.75,
+      "rrf_k": 60,
+      "rrf_depth": 100,
+      "embed_model": "hashing",
+      "embed_batch_size": 32,
+      "embed_max_chars": 800,
+      "embed_seq_length": 256,
+      "expansion_enabled": true,
+      "expansion_depth": 1,
+      "expansion_budget": 25,
+      "expansion_edge_types": [
+        "calls",
+        "imports",
+        "contains",
+        "references"
+      ],
+      "expansion_seed_k": 10,
+      "expansion_weight": 0.3,
+      "expansion_min_confidence": 0.3,
+      "granularity": "file"
+    }
+  },
+  "n_instances": 2,
+  "methods": {
+    "random": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 3.5582,
+          "mrr": 0.001,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        },
+        "stds": {
+          "map": 2.7145,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.0038,
+          "mrr": 0.0035,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        },
+        "stds": {
+          "map": 0.0016,
+          "mrr": 0.0014,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 0.5,
+          "closure_recall@1": 0.1,
+          "closure_recall@10": 0.1,
+          "closure_recall@5": 0.1
+        },
+        "stds": {
+          "closure_hit@10": 0.5,
+          "closure_recall@1": 0.1,
+          "closure_recall@10": 0.1,
+          "closure_recall@5": 0.1
+        }
+      },
+      "latency_ms_median": 39.088,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_recall@5": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_recall@10": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_mrr": {
+          "mean": 0.001,
+          "lo": 0.001,
+          "hi": 0.0011
+        },
+        "file_ndcg@10": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "closure_recall@5": {
+          "mean": 0.1,
+          "lo": 0.0,
+          "hi": 0.2
+        },
+        "closure_recall@10": {
+          "mean": 0.1,
+          "lo": 0.0,
+          "hi": 0.2
+        }
+      }
+    },
+    "lexical": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 0.6667,
+          "mrr": 0.6667,
+          "ndcg@10": 0.75,
+          "precision@10": 0.1,
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@5": 1.0
+        },
+        "stds": {
+          "map": 0.3333,
+          "mrr": 0.3333,
+          "ndcg@10": 0.25,
+          "precision@10": 0.0,
+          "recall@1": 0.5,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.25,
+          "mrr": 0.5,
+          "ndcg@10": 0.3066,
+          "precision@10": 0.05,
+          "recall@1": 0.25,
+          "recall@10": 0.25,
+          "recall@5": 0.25
+        },
+        "stds": {
+          "map": 0.25,
+          "mrr": 0.5,
+          "ndcg@10": 0.3066,
+          "precision@10": 0.05,
+          "recall@1": 0.25,
+          "recall@10": 0.25,
+          "recall@5": 0.25
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 1.0,
+          "closure_recall@1": 0.0,
+          "closure_recall@10": 0.4,
+          "closure_recall@5": 0.25
+        },
+        "stds": {
+          "closure_hit@10": 0.0,
+          "closure_recall@1": 0.0,
+          "closure_recall@10": 0.2,
+          "closure_recall@5": 0.05
+        }
+      },
+      "latency_ms_median": 986.794,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.5,
+          "lo": 0.0,
+          "hi": 1.0
+        },
+        "file_recall@5": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_recall@10": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_mrr": {
+          "mean": 0.6667,
+          "lo": 0.3333,
+          "hi": 1.0
+        },
+        "file_ndcg@10": {
+          "mean": 0.75,
+          "lo": 0.5,
+          "hi": 1.0
+        },
+        "closure_recall@5": {
+          "mean": 0.25,
+          "lo": 0.2,
+          "hi": 0.3
+        },
+        "closure_recall@10": {
+          "mean": 0.4,
+          "lo": 0.2,
+          "hi": 0.6
+        }
+      }
+    },
+    "semantic": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 0.1833,
+          "mrr": 0.1833,
+          "ndcg@10": 0.3715,
+          "precision@10": 0.1,
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@5": 0.5
+        },
+        "stds": {
+          "map": 0.0167,
+          "mrr": 0.0167,
+          "ndcg@10": 0.0153,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.5
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        },
+        "stds": {
+          "map": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 1.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.65,
+          "closure_recall@5": 0.4
+        },
+        "stds": {
+          "closure_hit@10": 0.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.15,
+          "closure_recall@5": 0.0
+        }
+      },
+      "latency_ms_median": 983.513,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_recall@5": {
+          "mean": 0.5,
+          "lo": 0.0,
+          "hi": 1.0
+        },
+        "file_recall@10": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_mrr": {
+          "mean": 0.1833,
+          "lo": 0.1667,
+          "hi": 0.2
+        },
+        "file_ndcg@10": {
+          "mean": 0.3715,
+          "lo": 0.3562,
+          "hi": 0.3869
+        },
+        "closure_recall@5": {
+          "mean": 0.4,
+          "lo": 0.4,
+          "hi": 0.4
+        },
+        "closure_recall@10": {
+          "mean": 0.65,
+          "lo": 0.5,
+          "hi": 0.8
+        }
+      }
+    },
+    "hybrid": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 0.2667,
+          "mrr": 0.2667,
+          "ndcg@10": 0.4434,
+          "precision@10": 0.1,
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@5": 1.0
+        },
+        "stds": {
+          "map": 0.0667,
+          "mrr": 0.0667,
+          "ndcg@10": 0.0566,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.025,
+          "mrr": 0.05,
+          "ndcg@10": 0.0886,
+          "precision@10": 0.05,
+          "recall@1": 0.0,
+          "recall@10": 0.25,
+          "recall@5": 0.0
+        },
+        "stds": {
+          "map": 0.025,
+          "mrr": 0.05,
+          "ndcg@10": 0.0886,
+          "precision@10": 0.05,
+          "recall@1": 0.0,
+          "recall@10": 0.25,
+          "recall@5": 0.0
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 1.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.5,
+          "closure_recall@5": 0.3
+        },
+        "stds": {
+          "closure_hit@10": 0.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.1,
+          "closure_recall@5": 0.1
+        }
+      },
+      "latency_ms_median": 923.047,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_recall@5": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_recall@10": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_mrr": {
+          "mean": 0.2667,
+          "lo": 0.2,
+          "hi": 0.3333
+        },
+        "file_ndcg@10": {
+          "mean": 0.4434,
+          "lo": 0.3869,
+          "hi": 0.5
+        },
+        "closure_recall@5": {
+          "mean": 0.3,
+          "lo": 0.2,
+          "hi": 0.4
+        },
+        "closure_recall@10": {
+          "mean": 0.5,
+          "lo": 0.4,
+          "hi": 0.6
+        }
+      }
+    },
+    "graph_hybrid": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 0.6667,
+          "mrr": 0.6667,
+          "ndcg@10": 0.75,
+          "precision@10": 0.1,
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@5": 1.0
+        },
+        "stds": {
+          "map": 0.3333,
+          "mrr": 0.3333,
+          "ndcg@10": 0.25,
+          "precision@10": 0.0,
+          "recall@1": 0.5,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.025,
+          "mrr": 0.05,
+          "ndcg@10": 0.0886,
+          "precision@10": 0.05,
+          "recall@1": 0.0,
+          "recall@10": 0.25,
+          "recall@5": 0.0
+        },
+        "stds": {
+          "map": 0.025,
+          "mrr": 0.05,
+          "ndcg@10": 0.0886,
+          "precision@10": 0.05,
+          "recall@1": 0.0,
+          "recall@10": 0.25,
+          "recall@5": 0.0
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 1.0,
+          "closure_recall@1": 0.0,
+          "closure_recall@10": 0.5,
+          "closure_recall@5": 0.3
+        },
+        "stds": {
+          "closure_hit@10": 0.0,
+          "closure_recall@1": 0.0,
+          "closure_recall@10": 0.1,
+          "closure_recall@5": 0.1
+        }
+      },
+      "latency_ms_median": 934.543,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.5,
+          "lo": 0.0,
+          "hi": 1.0
+        },
+        "file_recall@5": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_recall@10": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_mrr": {
+          "mean": 0.6667,
+          "lo": 0.3333,
+          "hi": 1.0
+        },
+        "file_ndcg@10": {
+          "mean": 0.75,
+          "lo": 0.5,
+          "hi": 1.0
+        },
+        "closure_recall@5": {
+          "mean": 0.3,
+          "lo": 0.2,
+          "hi": 0.4
+        },
+        "closure_recall@10": {
+          "mean": 0.5,
+          "lo": 0.4,
+          "hi": 0.6
+        }
+      }
+    },
+    "path": {
+      "file": {
+        "n": 2,
+        "means": {
+          "map": 0.4167,
+          "mrr": 0.4167,
+          "ndcg@10": 0.5655,
+          "precision@10": 0.1,
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@5": 1.0
+        },
+        "stds": {
+          "map": 0.0833,
+          "mrr": 0.0833,
+          "ndcg@10": 0.0655,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.0
+        }
+      },
+      "symbol": {
+        "n": 2,
+        "means": {
+          "map": 0.0917,
+          "mrr": 0.1833,
+          "ndcg@10": 0.2278,
+          "precision@10": 0.1,
+          "recall@1": 0.0,
+          "recall@10": 0.5,
+          "recall@5": 0.25
+        },
+        "stds": {
+          "map": 0.0083,
+          "mrr": 0.0167,
+          "ndcg@10": 0.0094,
+          "precision@10": 0.0,
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@5": 0.25
+        }
+      },
+      "closure": {
+        "n": 2,
+        "means": {
+          "closure_hit@10": 1.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.6,
+          "closure_recall@5": 0.4
+        },
+        "stds": {
+          "closure_hit@10": 0.0,
+          "closure_recall@1": 0.05,
+          "closure_recall@10": 0.0,
+          "closure_recall@5": 0.0
+        }
+      },
+      "latency_ms_median": 873.863,
+      "bootstrap_ci": {
+        "file_recall@1": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "file_recall@5": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_recall@10": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "file_mrr": {
+          "mean": 0.4167,
+          "lo": 0.3333,
+          "hi": 0.5
+        },
+        "file_ndcg@10": {
+          "mean": 0.5655,
+          "lo": 0.5,
+          "hi": 0.6309
+        },
+        "closure_recall@5": {
+          "mean": 0.4,
+          "lo": 0.4,
+          "hi": 0.4
+        },
+        "closure_recall@10": {
+          "mean": 0.6,
+          "lo": 0.6,
+          "hi": 0.6
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "graph_hybrid_vs_hybrid::file_metrics.recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "graph_hybrid_vs_hybrid::file_metrics.mrr": {
+      "mean_diff": 0.4,
+      "lo": 0.0,
+      "hi": 0.8,
+      "p": 0.509,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "graph_hybrid_vs_hybrid::closure_metrics.closure_recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "graph_hybrid_vs_hybrid::symbol_metrics.recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "lexical_vs_hybrid::file_metrics.recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "lexical_vs_hybrid::file_metrics.mrr": {
+      "mean_diff": 0.4,
+      "lo": 0.1333,
+      "hi": 0.6667,
+      "p": 0.0,
+      "n": 2,
+      "wilcoxon_p": 0.5
+    },
+    "lexical_vs_hybrid::closure_metrics.closure_recall@10": {
+      "mean_diff": -0.1,
+      "lo": -0.2,
+      "hi": 0.0,
+      "p": 0.4968,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "lexical_vs_hybrid::symbol_metrics.recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "semantic_vs_hybrid::file_metrics.recall@10": {
+      "mean_diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "p": 1.0,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "semantic_vs_hybrid::file_metrics.mrr": {
+      "mean_diff": -0.0833,
+      "lo": -0.1333,
+      "hi": -0.0333,
+      "p": 0.0,
+      "n": 2,
+      "wilcoxon_p": 0.5
+    },
+    "semantic_vs_hybrid::closure_metrics.closure_recall@10": {
+      "mean_diff": 0.15,
+      "lo": -0.1,
+      "hi": 0.4,
+      "p": 0.4968,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    },
+    "semantic_vs_hybrid::symbol_metrics.recall@10": {
+      "mean_diff": -0.25,
+      "lo": -0.5,
+      "hi": 0.0,
+      "p": 0.4968,
+      "n": 2,
+      "wilcoxon_p": 1.0
+    }
+  },
+  "resources": {
+    "index_seconds_mean": 1.165,
+    "entities_mean": 1306.5,
+    "files_mean": 35,
+    "graph_nodes_mean": 1306.5,
+    "graph_edges_mean": 2663.5
+  }
+}

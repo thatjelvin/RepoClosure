@@ -1,0 +1,5 @@
+method,repo,n,file_recall@10,file_mrr,closure_recall@10
+lexical,marshmallow-code/marshmallow,2,1.0,0.75,0.5
+semantic,marshmallow-code/marshmallow,2,1.0,0.6667,0.8
+hybrid,marshmallow-code/marshmallow,2,1.0,1.0,0.55
+graph_hybrid,marshmallow-code/marshmallow,2,1.0,1.0,0.6

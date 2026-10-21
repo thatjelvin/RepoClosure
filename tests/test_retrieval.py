@@ -52,3 +52,21 @@ def test_unknown_repo_does_not_crash(tmp_path):
     idx = RepositoryIndex(tmp_path, cfg).build()
     res = idx.search("anything", method="graph_hybrid")
     assert res.items == []
+
+
+def test_dense_cache_is_namespaced_by_backend():
+    """Vectors from different encoders must never share a cache key."""
+    from repoclosure.retrieval import DenseRetriever
+
+    cfg = Config()
+    cfg.retrieval.embed_model = "hashing"
+    d = DenseRetriever(cfg.retrieval)
+    d.encode(["hello world"])
+    keys_after = set(d.get_cache())
+    assert keys_after
+    assert all("|hashing|" in k for k in keys_after)
+
+    d2 = DenseRetriever(cfg.retrieval)
+    d2.set_cache(d.get_cache())
+    d2.encode(["hello world"])
+    assert set(d2.get_cache()) == keys_after

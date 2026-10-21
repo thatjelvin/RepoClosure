@@ -1,0 +1,81 @@
+{
+  "seed": 42,
+  "parse": {
+    "source_suffixes": [
+      ".py"
+    ],
+    "ignored_dirs": [
+      ".git",
+      ".hg",
+      ".svn",
+      "__pycache__",
+      ".venv",
+      "venv",
+      "env",
+      ".env",
+      "build",
+      "dist",
+      "node_modules",
+      ".tox",
+      ".mypy_cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      "site-packages",
+      ".eggs",
+      "htmlcov",
+      ".idea",
+      ".vscode",
+      "docs/_build",
+      ".nox",
+      "target",
+      ".cache"
+    ],
+    "ignored_path_parts": [
+      "/migrations/",
+      "generated",
+      "_pb2.py",
+      ".min.js",
+      "vendor/",
+      "third_party/"
+    ],
+    "max_file_bytes": 2000000,
+    "include_private": true,
+    "parse_failures_are_recorded": true
+  },
+  "graph": {
+    "enabled_edge_types": [
+      "contains",
+      "imports",
+      "calls",
+      "references"
+    ],
+    "min_confidence": 0.0,
+    "enable_heuristic_calls": true,
+    "heuristic_call_confidence": 0.3,
+    "include_tests": true
+  },
+  "retrieval": {
+    "top_k": 10,
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "rrf_k": 60,
+    "rrf_depth": 100,
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_batch_size": 32,
+    "embed_max_chars": 2000,
+    "embed_seq_length": 256,
+    "expansion_enabled": true,
+    "expansion_depth": 1,
+    "expansion_budget": 25,
+    "expansion_edge_types": [
+      "calls",
+      "imports",
+      "contains",
+      "references"
+    ],
+    "expansion_seed_k": 10,
+    "expansion_weight": 0.3,
+    "expansion_min_confidence": 0.3,
+    "granularity": "file"
+  }
+}

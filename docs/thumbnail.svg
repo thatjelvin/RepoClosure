@@ -1,0 +1,64 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" />
+      <feOffset dx="0" dy="8" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)" rx="0" />
+  <circle cx="1100" cy="-200" r="300" fill="#38bdf8" opacity="0.15" />
+  <circle cx="100" cy="830" r="260" fill="#818cf8" opacity="0.12" />
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="24" />
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="60" width="480" height="510" fill="#1e293b" rx="20" />
+    <circle cx="120" cy="120" r="32" fill="url(#accent)" />
+    <text x="120" y="128" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0f172a" text-anchor="middle">RC</text>
+    <text x="120" y="190" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-2">RepoClosure</text>
+    <text x="120" y="230" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Graph-guided code retrieval</text>
+
+    <rect x="120" y="280" width="240" height="2" fill="rgba(255,255,255,0.12)" />
+
+    <text x="120" y="310" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#f8fafc" text-anchor="middle">How it works</text>
+    <g transform="translate(120, 340)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">1. Parse repo into typed AST graph</text>
+      <text x="0" y="28" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">2. Fuse BM25 + embeddings + paths</text>
+      <text x="0" y="56" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">3. Expand via graph-guided traversal</text>
+      <text x="0" y="84" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">4. Return explainable results</text>
+    </g>
+
+    <rect x="120" y="430" width="240" height="2" fill="rgba(255,255,255,0.12)" />
+    <text x="120" y="460" font-family="Arial, sans-serif" font-size="13" fill="#38bdf8" font-weight="600" text-anchor="middle">Apache 2.0 &bull; Open Source</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="580" y="80" width="560" height="470" fill="#1e293b" rx="20" />
+    <rect x="620" y="120" width="120" height="120" fill="#334155" rx="8" />
+    <rect x="760" y="120" width="120" height="120" fill="#334155" rx="8" />
+    <rect x="620" y="260" width="260" height="120" fill="#334155" rx="8" />
+    <rect x="620" y="400" width="500" height="120" fill="#334155" rx="8" />
+    <text x="860" y="200" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" text-anchor="middle">Query</text>
+    <text x="860" y="330" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Ranked results</text>
+    <text x="870" y="470" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">with graph explanations</text>
+    <path d="M500 315 L540 315 M520 295 L540 315 L520 335" stroke="#38bdf8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M560 315 L600 315 M580 295 L600 315 L580 335" stroke="#38bdf8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <rect x="40" y="510" width="1120" height="40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="20" />
+  <text x="600" y="536" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle" font-weight="500">Gemma 4 Developer Agent Paper Track &bull; Best New Resource</text>
+</svg>

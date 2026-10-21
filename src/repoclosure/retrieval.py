@@ -75,6 +75,9 @@ class BM25Retriever:
 # --------------------------------------------------------------------------- #
 # Semantic
 # --------------------------------------------------------------------------- #
+_MODEL_CACHE: dict[str, object] = {}
+
+
 class DenseRetriever:
     """Cosine-similarity dense retrieval with a small local embedding model.
 
@@ -90,6 +93,14 @@ class DenseRetriever:
         self._model = None
         self._backend = ""
         self._cache: dict[str, np.ndarray] = {}
+
+    def _cache_tag(self) -> str:
+        """Identity of the encoder, used to namespace cache keys.
+
+        Without this, vectors produced by different backends/models would collide
+        (e.g. the 256-dim hashing fallback vs. 384-dim MiniLM) and corrupt the cache.
+        """
+        return f"{self._backend}|{self.config.embed_model}|{self.config.embed_seq_length}"
 
     def set_cache(self, cache: dict[str, np.ndarray] | None) -> None:
         self._cache = dict(cache) if cache else {}
@@ -109,7 +120,20 @@ class DenseRetriever:
             return
         try:
             from sentence_transformers import SentenceTransformer
-            self._model = SentenceTransformer(self.config.embed_model)
+            import os
+
+            import torch
+            torch.set_num_threads(max(1, min(4, os.cpu_count() or 2)))
+            try:
+                torch.set_num_interop_threads(1)
+            except RuntimeError:
+                pass  # already initialised
+            cached = _MODEL_CACHE.get(self.config.embed_model)
+            if cached is None:
+                cached = SentenceTransformer(self.config.embed_model)
+                cached.max_seq_length = self.config.embed_seq_length
+                _MODEL_CACHE[self.config.embed_model] = cached
+            self._model = cached
             self._backend = "sentence_transformers"
             return
         except Exception:  # pragma: no cover - fallback path
@@ -128,7 +152,8 @@ class DenseRetriever:
     def encode(self, texts: list[str]) -> np.ndarray:
         self._load()
         texts = [t[: self.config.embed_max_chars] for t in texts]
-        keys = [hashlib.sha256(t.encode("utf-8", "replace")).hexdigest() for t in texts]
+        keys = [f"{self._cache_tag()}:{hashlib.sha256(t.encode('utf-8', 'replace')).hexdigest()}"
+                for t in texts]
         missing = [(i, t) for i, (k, t) in enumerate(zip(keys, texts)) if k not in self._cache]
         if missing:
             emb_new = self._encode_uncached([t for _, t in missing])

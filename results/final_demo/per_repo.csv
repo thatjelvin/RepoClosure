@@ -1,0 +1,11 @@
+method,repo,n,file_recall@10,file_mrr,closure_recall@10
+lexical,marshmallow-code/marshmallow,2,1.0,0.75,0.5
+lexical,mwaskom/seaborn,1,1.0,0.1667,0.2
+semantic,marshmallow-code/marshmallow,2,1.0,0.6667,0.8
+semantic,mwaskom/seaborn,1,1.0,0.5,0.4
+hybrid,marshmallow-code/marshmallow,2,1.0,1.0,0.55
+hybrid,mwaskom/seaborn,1,1.0,0.5,0.2667
+graph_hybrid,marshmallow-code/marshmallow,2,1.0,1.0,0.6
+graph_hybrid,mwaskom/seaborn,1,1.0,0.5,0.2667
+path,marshmallow-code/marshmallow,2,1.0,0.4167,0.6
+path,mwaskom/seaborn,1,1.0,0.1,0.1333

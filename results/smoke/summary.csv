@@ -1,0 +1,7 @@
+method,file_recall@1,file_recall@5,file_recall@10,file_mrr,file_ndcg@10,symbol_recall@10,closure_recall@5,closure_recall@10,latency_ms_median
+random,0.0,0.0,0.0,0.001,0.0,0.0,0.1,0.1,39.088
+lexical,0.5,1.0,1.0,0.6667,0.75,0.25,0.25,0.4,986.794
+semantic,0.0,0.5,1.0,0.1833,0.3715,0.0,0.4,0.65,983.513
+hybrid,0.0,1.0,1.0,0.2667,0.4434,0.25,0.3,0.5,923.047
+graph_hybrid,0.5,1.0,1.0,0.6667,0.75,0.25,0.3,0.5,934.543
+path,0.0,1.0,1.0,0.4167,0.5655,0.5,0.4,0.6,873.863

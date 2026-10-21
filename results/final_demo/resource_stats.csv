@@ -1,0 +1,4 @@
+instance_id,repo,num_entities,num_files,index_seconds,graph_seconds,num_graph_nodes,num_graph_edges
+marshmallow-code__marshmallow-1343,marshmallow-code/marshmallow,1290,36,2.4272,0.0585,1290,2586
+marshmallow-code__marshmallow-1359,marshmallow-code/marshmallow,1323,34,8.3575,0.0425,1323,2741
+mwaskom__seaborn-2848,mwaskom/seaborn,2652,146,2.9196,0.1425,2652,7722

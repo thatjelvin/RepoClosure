@@ -1,0 +1,115 @@
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensed Product" shall mean the software package or other computer
+      code which is the subject of this License, including without limitation
+      its source code, object code, and associated documentation files.
+
+      "Licensor" shall mean the individual or entity that grants the License
+      in respect of a Licensed Product. "You" (or "Your") shall mean an
+      individual or entity exercising the permissions granted by this License.
+
+      "Source" form shall mean the preferred format for making modifications,
+      including but not limited to source code, assembly language, and, if
+      applicable, binary files, with any additions or deletions of any
+      components.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a source form, including but not
+      limited to object code generated from a source form, and, if applicable,
+      binary files with any additions or deletions of any components.
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Licensed Product and for
+      which the editorial revision and production of any modifications,
+      additions, or deletions of the original Licensed Product is specified.
+      As used herein, "Derivative Works" does not include stand-alone works
+      which are not based on or derived from the Licensed Product.
+
+      "Contribution" shall mean any work, whether in Source or Object
+      form, that is submitted to the Licensor for inclusion in the Licensed
+      Product by the author or author's representative of the initial version
+      of the Licensed Product. For the purposes of this Definition, a
+      Contribution shall have at least one intersection point with the
+      Licensed Product as the result of the addition of any
+      components of the Licensed Product.
+
+      "Non-Source" form shall mean any form that does not have a source
+      component.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Licensor hereby grants to You a worldwide,
+      royalty-free, no-exclusive, copyright license to reproduce, prepare
+      Derivative Works, publish, distribute, and duly use the Licensed
+      Product in accordance with Sections 3 and 9 of this License.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Licensor hereby grants to You a worldwide,
+      royalty-free, no-exclusive patent license to make, have made, use,
+      distribute, and sell, or form and for which the Licensed Product is
+      licensed.
+
+   4. Redistribution. You may reproduce or distribute the Licensed Product
+      only by one of the following methods: (a) retaining the Source
+      form and, upon the completion of the analysis, preparing and
+      distributing in accordance with Section 3 of this License; (b)
+      retaining the Object form and, upon the completion of the analysis,
+      preparing and distributing in accordance with Section 3 of this
+      License; (c) combining the Source and Object forms and, upon the
+      completion of the analysis, preparing and distributing in accordance
+      with Section 3 of this License.
+
+   5. Submission of Contributions. Unless explicitly stated otherwise,
+      the Licensor shall accept, for inclusion in the Licensed Product
+      by the author or author's representative of the initial version
+      of the Licensed Product, the author or author's representative of
+      the initial version of the Licensed Product shall submit to the
+      Licensor for inclusion in the Licensed Product any Contribution
+      which has at least one intersection point with the
+      Licensed Product as the result of the addition of any
+      components of the Licensed Product.
+
+   6. Trademarks. This License does not affect the use of trademarks by
+      either party.
+
+   7. Modifications. The terms and conditions of this License are
+      self-replicating. For example, if the Licensore grants to You a
+      worldwide, royalty-free, no-exclusive, copyright license to reproduce,
+      prepare Derivative Works, publish, distribute, and duly use the
+      Licensed Product in accordance with Sections 3 and 9 of this License,
+      then the terms and conditions of this License are self-replicating.
+
+   8. Termination. If you are unable to satisfy the terms and conditions of
+      this License with respect to a particular work, the Licensor shall
+      not grant to You a worldwide, royalty-free, no-exclusive, copyright
+      license to reproduce, prepare Derivative Works, publish, distribute,
+      and duly use the Licensed Product in accordance with Sections 3 and 9
+      of this License.
+
+   9. Accepting the License. In order to receive the benefits of this
+      License, you must accept the terms and conditions of this License
+      in accordance with Sections 3 and 9 of this License.
+
+   END OF TERMS AND CONDITIONS
+
+   Copyright [2026] [RepoClosure contributors]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions
+   and limitations under the License.

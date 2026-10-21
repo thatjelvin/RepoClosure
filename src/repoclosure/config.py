@@ -65,7 +65,8 @@ class RetrievalConfig:
     # Dense retrieval.
     embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     embed_batch_size: int = 32
-    embed_max_chars: int = 2000
+    embed_max_chars: int = 800
+    embed_seq_length: int = 256
     # Graph-guided expansion.
     expansion_enabled: bool = True
     expansion_depth: int = 1
